@@ -9,15 +9,15 @@
  */
 int main(void)
 {
-        char i;
+	char i;
 
-        for (i = 'a'; i <= 'z'; i++)
-        {
+	for (i = 'a'; i <= 'z'; i++)
+	{
 		if (i != 'q' && i != 'e')
 		{
 			printf("%c", i);
 		}
-        }
-        printf("\n");
-        return (0);
+	}
+	printf("\n");
+	return (0);
 }

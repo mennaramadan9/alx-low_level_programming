@@ -15,10 +15,13 @@ void print_to_98(int n)
 	{
 		for (i = n; i <= 98; i++)
 		{
-			printf("%d", i);
 			if (n != 98)
 			{
-				printf(", ");
+				printf("%d, ", i);
+			}
+			else
+			{
+				printf("%d\n", i);
 			}
 		}
 	}
@@ -26,10 +29,13 @@ void print_to_98(int n)
 	{
 		for (j = n; j >= 98; j++)
 		{
-			printf("%d", j);
 			if (n != 98)
 			{
-				printf(", ");
+				printf("%d, ", j);
+			}
+			else
+			{
+				printf("%d\n", j);
 			}
 		}
 	}	

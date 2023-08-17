@@ -1,10 +1,9 @@
 #include <stdio.h>
 
 /**
- * Fizz-Buzz test -  prints the numbers from 1 to 100
+ * main -  prints the numbers from 1 to 100
  * for multiples of three print fizz
  * for the multiples of five print Buzz
- * For multiples of both three and five print FizzBuzz
  * Return: Always 0
  */
 int main(void)
@@ -17,11 +16,11 @@ int main(void)
 		{
 			printf("FizzBuzz ");
 		}
-		else if (i % 3 == 0)
+		else if (i % 3 == 0 && i % 5 != 0)
 		{
 			printf("Fizz ");
 		}
-		else if (i % 5 == 0)
+		else if (i % 5 == 0 && i % 3 != 0)
 		{
 			printf("Buzz ");
 		}

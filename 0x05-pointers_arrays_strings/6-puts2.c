@@ -7,10 +7,18 @@
  */
 void puts2(char *str)
 {
+	int toggle;
+
+	toggle = 0;
+
 	while (*str != '\0')
 	{
-		_putchar(*str);
-		str = str + 2;
+		if (toggle == 0)
+		{
+			_putchar(*str);
+		}
+		toggle = 1 - toggle;
+		str++;
 	}
 	_putchar('\n');
 }

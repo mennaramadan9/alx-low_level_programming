@@ -1,6 +1,28 @@
 #include "main.h"
 
 /**
+ * is_palindrome - check palindrome
+ * @s: string
+ * @start: variable
+ * @end: variable
+ * Return: 1 or 0
+ */
+int is_palindrome_helper(char *s, int start, int end);
+int is_palindrome(char *s)
+{
+	int l = 0;
+	char *c = s;
+
+	if (*s == '\0')
+		return (1);
+	while (*c != '\0')
+	{
+		l++;
+		c++;
+	}
+	return (is_palindrome_helper(s, 0, l - 1));
+}
+/**
  * is_palindrome_helper - check palindrome
  * @s: string
  * @start: variable
@@ -14,22 +36,4 @@ int is_palindrome_helper(char *s, int start, int end)
 	if (s[start] != s[end])
 		return (0);
 	return (is_palindrome_helper(s, start + 1, end - 1));
-}
-/**
- * is_palindrome - check palindrome
- * @s: string
- * Return: 1 or 0
- */
-int is_palindrome(char *s)
-{
-	int l;
-
-	while (*s != '\0')
-	{
-		l++;
-		s++;
-	}
-	if (l <= 1)
-		return (1);
-	return (is_palindrome_helper(s, 0, l - 1));
 }

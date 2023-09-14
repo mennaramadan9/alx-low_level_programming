@@ -9,6 +9,12 @@ void print_all(const char * const format, ...);
 
 #include <stdarg.h>
 
+/**
+ * struct variadic_functions - struct
+ * @op: option
+ * @f: function
+ * Description: print any thing fot function print all
+ */
 typedef struct variadic_functions
 {
 	char *op;

@@ -41,15 +41,11 @@ void print_string(char *separator, va_list ptr)
 {
 	char *str = va_arg(ptr, char *);
 
-	switch (str != NULL)
-	{
-		case 0:
-			printf("%s(nil)", separator);
-			break;
+	switch ((int)(!str))
 		case 1:
-			printf("%s%s", separator, str);
-			break;
-	}
+			str = "(nil)";
+
+	printf("%s%s", separator, str);
 }
 
 /**
@@ -58,26 +54,26 @@ void print_string(char *separator, va_list ptr)
  */
 void print_all(const char * const format, ...)
 {
-	int i, j, num_items;
+	int i, j;
 	va_list ptr;
 	char *separator = "";
 	item items[] = {
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
-		{"s", print_string}
+		{"s", print_string},
+		{NULL, NULL}
 	};
 
 	va_start(ptr, format);
 
 	i = 0;
-	num_items = sizeof(items) / sizeof(items[0]);
 
 	while (format[i])
 	{
 		j = 0;
 
-		while (j < num_items)
+		while (items[j].op)
 		{
 			if (format[i] == items[j].op[0])
 			{

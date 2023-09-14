@@ -69,7 +69,7 @@ void print_all(const char * const format, ...)
 
 	i = 0;
 
-	while (format[i])
+	while (format && format[i])
 	{
 		j = 0;
 
@@ -86,6 +86,5 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	printf("\n");
-
 	va_end(ptr);
 }

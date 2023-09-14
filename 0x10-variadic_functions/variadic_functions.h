@@ -7,4 +7,12 @@ void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 
+#include <stdarg.h>
+
+typedef struct variadic_functions
+{
+	char *op;
+	void (*f)(char *, va_list);
+} item;
+
 #endif

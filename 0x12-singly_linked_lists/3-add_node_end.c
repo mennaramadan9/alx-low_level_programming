@@ -11,7 +11,7 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *ptr, temp;
+	list_t *ptr, *temp;
 
 	if (str == NULL)
 		return (NULL);
